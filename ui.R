@@ -1,19 +1,25 @@
 ui <- navbarPage(
   title = "Shiny Modules",
-  id = "three_tabs",
+  id = "tab_container",
+  theme = shinytheme(theme = "flatly"),
 
   tabPanel(
-    title = "Tab 1",
-    value = "tab1"
+    title = "Data Input",
+    value = "tab_input",
+
+    shinyjs::useShinyjs(),
+
+    data_input_ui(id = "data_input")
   ),
 
   tabPanel(
-    title = "Tab 2",
-    value = "tab2"
+    title = "Plot",
+    value = "tab_plot"
   ),
 
   tabPanel(
-    title = "Tab 3",
-    value = "tab3"
+    title = "Distributions",
+    value = "tab_distributions"
   )
 )
+
