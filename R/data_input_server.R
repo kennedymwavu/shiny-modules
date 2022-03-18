@@ -43,6 +43,10 @@ data_input_server <- function(
           selected = "tab_plot"
         )
       })
+      # <---Last time we reached here--->
+
+      # <---Now add this return statement:--->
+      return(r_flowers)
     }
   )
 }
