@@ -3,4 +3,9 @@ server <- function(input, output, session) {
     id = "data_input",
     parent_session = session
   )
+
+  plot_server(
+    id = "var_plots",
+    r_flowers = r_flowers
+  )
 }
