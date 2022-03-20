@@ -14,7 +14,9 @@ ui <- navbarPage(
 
   tabPanel(
     title = "Plot",
-    value = "tab_plot"
+    value = "tab_plot",
+
+    plot_ui(id = "var_plots")
   ),
 
   tabPanel(
