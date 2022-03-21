@@ -29,27 +29,26 @@ plot_server <- function(id, r_flowers) {
         )
       })
 
+      # ----plots----
+      plots <- reactive({
+        xy_plots(
+          flowers = r_flowers(),
+          x = input$x_var,
+          y = input$y_var
+        )
+      })
+
       # x_var vs y_var:
       output$x_vs_y <- renderPlot({
-        r_flowers() |>
-          ggplot(
-            mapping = aes(
-              # use the `.data` pronoun here:
-              x = .data[[input$x_var]], y = .data[[input$y_var]],
-              # color by `Species`:
-              color = Species
-            )
-          ) +
-          geom_point(size = 2) +
-          # give some bizarre colors:
-          scale_color_manual(values = c("black", "red", "blue")) +
-          theme_bw() +
-          theme(
-            # remove legend title:
-            legend.title = element_blank(),
-            text = element_text(size = 15),
-            aspect.ratio = 0.7
-          )
+        plots()$scatterplot
+      })
+
+      output$x_boxplot <- renderPlot({
+        plots()$x_boxplot
+      })
+
+      output$y_boxplot <- renderPlot({
+        plots()$y_boxplot
       })
     }
   )
