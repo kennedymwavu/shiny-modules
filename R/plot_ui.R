@@ -2,12 +2,17 @@ plot_ui <- function(id) {
   shiny::tagList(
     sidebarLayout(
       sidebarPanel = sidebarPanel(
+        align = "center",
+
         # x variable:
         selectInput(
           inputId = NS(namespace = id, id = "x_var"),
           label = "X Variable",
           choices = NULL
         ),
+
+        tags$br(),
+        tags$br(),
 
         # y variable:
         selectInput(
@@ -21,9 +26,16 @@ plot_ui <- function(id) {
         # plot of the two vars against each other:
         plotOutput(
           outputId = NS(namespace = id, id = "x_vs_y")
-        )
+        ) |>
+          shinycssloaders::withSpinner(
+            type = 2,
+            color.background = "white"
+          )
       )
     ),
+
+    tags$br(),
+    tags$br(),
 
     fluidRow(
       column(
@@ -41,7 +53,9 @@ plot_ui <- function(id) {
         plotOutput(
           outputId = NS(namespace = id, id = "y_boxplot")
         )
-      )
+      ),
+
+      tags$br()
     )
   )
 }
