@@ -50,6 +50,16 @@ plot_server <- function(id, r_flowers) {
       output$y_boxplot <- renderPlot({
         plots()$y_boxplot
       })
+
+      # ----return----
+      res <- reactive({
+        list(
+          x_var = reactive({ input$x_var  }),
+          y_var = reactive({ input$y_var })
+        )
+      })
+
+      return(res)
     }
   )
 }
