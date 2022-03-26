@@ -21,7 +21,9 @@ ui <- navbarPage(
 
   tabPanel(
     title = "Distributions",
-    value = "tab_distributions"
+    value = "tab_distributions",
+
+    distribution_ui(id = "dist_plots")
   )
 )
 
