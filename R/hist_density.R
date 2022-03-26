@@ -8,10 +8,10 @@
 #' @export
 #'
 #' @examples
-#' histogram(iris, "Sepal.Length")
-#' histogram(iris, "Petal.Length")
+#' hist_density(iris, "Sepal.Length")
+#' hist_density(iris, "Petal.Length")
 
-histogram <- function(flowers, col_name) {
+hist_density <- function(flowers, col_name) {
   flowers |>
   ggplot2::ggplot(
     mapping = ggplot2::aes( x = .data[[col_name]] )
