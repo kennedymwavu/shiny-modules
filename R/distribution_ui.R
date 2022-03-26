@@ -16,7 +16,11 @@ distribution_ui <- function(id) {
         # The plot:
         plotOutput(
           outputId = NS(namespace = id, id = "x_distribution")
-        )
+        ) |>
+          shinycssloaders::withSpinner(
+            type = 2,
+            color.background = "white"
+          )
       ),
 
       column(
@@ -30,7 +34,11 @@ distribution_ui <- function(id) {
 
         plotOutput(
           outputId = NS(namespace = id, id = "y_distribution")
-        )
+        ) |>
+          shinycssloaders::withSpinner(
+            type = 2,
+            color.background = "white"
+          )
       )
     )
   )
