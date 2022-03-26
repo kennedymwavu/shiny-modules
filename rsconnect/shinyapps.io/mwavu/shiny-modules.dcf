@@ -1,0 +1,13 @@
+name: shiny-modules
+title: shiny-modules
+username:
+account: mwavu
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 5942023
+bundleId: 5731172
+url: https://mwavu.shinyapps.io/shiny-modules/
+when: 1648332650.92008
+lastSyncTime: 1648332650.92013
+asMultiple: FALSE
+asStatic: FALSE
