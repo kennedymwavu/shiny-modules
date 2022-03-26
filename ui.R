@@ -9,6 +9,8 @@ ui <- navbarPage(
 
     shinyjs::useShinyjs(),
 
+    includeCSS(path = "www/styles.css"),
+
     data_input_ui(id = "data_input")
   ),
 
