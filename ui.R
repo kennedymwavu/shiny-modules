@@ -2,6 +2,10 @@ ui <- navbarPage(
   title = "Shiny Modules",
   id = "tab_container",
   theme = shinytheme(theme = "flatly"),
+  footer = tags$div(
+    tags$br(),
+    tags$br()
+  ),
 
   tabPanel(
     title = "Data Input",
